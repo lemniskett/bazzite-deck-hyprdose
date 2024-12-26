@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+echo steam > /run/angeld.fifo

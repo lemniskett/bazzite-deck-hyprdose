@@ -1,0 +1,11 @@
+[Unit]
+Description=Angel Daemon
+After=NetworkManager.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/angeld
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
