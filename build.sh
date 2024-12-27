@@ -59,4 +59,5 @@ dnf5 install -y --setopt=install_weak_deps=False \
     gnome-extensions-app \
     papirus-icon-theme \
     adw-gtk3-theme \
-    starship
+    starship \
+    htop
