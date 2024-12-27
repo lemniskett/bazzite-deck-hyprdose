@@ -15,8 +15,8 @@ mkfifo /run/angeld.fifo -m 666 # Scary!
 while read -r COMMAND < /run/angeld.fifo; do
     case "$COMMAND" in
         hyprland)
-	systemctl stop sddm
-	sleep 1
+        systemctl stop sddm
+        sleep 1
         chvt 5
         ;;
         steam)
