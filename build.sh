@@ -46,6 +46,7 @@ dnf5 install -y --setopt=install_weak_deps=False \
     waybar \
     nwg-drawer \
     wdisplays \
+    pavucontrol \
     mako \
     wob \
     grim \
