@@ -9,3 +9,5 @@ I prefer not to touch existing scripts that made the Gaming mode and Desktop mod
 ```sh
 sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/lemniskett/bazzite-deck-hyprdose:latest
 ```
+
+This image is intended for my own usage only, but questions in issues are welcome.
