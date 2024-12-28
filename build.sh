@@ -76,6 +76,7 @@ dnf5 install -y --setopt=install_weak_deps=False \
     brightnessctl \
     alacarte \
     seahorse \
+    eog \
     NetworkManager-tui \
     gnome-extensions-app \
     papirus-icon-theme \
