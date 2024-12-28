@@ -36,7 +36,7 @@ git checkout "$OPENSD_VERSION"
 cmake -Bbuild -DOPT_POSTINSTALL=FALSE -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
 cmake --build build
 cd build
-cmake --build . --taget install
+cmake --build . --target install
 cd /
 opensdd --version
 rm -rf /tmp/opensd
