@@ -2,6 +2,7 @@
 
 RELEASE="$(rpm -E %fedora)"
 WVKBD_VERSION="v0.16"
+OPENSD_VERSION="v0.52"
 
 set -ouex pipefail
 
@@ -13,6 +14,8 @@ enable_copr() {
 }
 
 dnf5 install -y --setopt=install_weak_deps=False \
+    gcc-c++ \
+    cmake \
     wayland-devel \
     libxkbcommon-devel \
     pango-devel \
@@ -24,9 +27,23 @@ git checkout "$WVKBD_VERSION"
 make PREFIX=/usr
 make PREFIX=/usr install
 cd /
+wvkbd-mobintl --version
 rm -rf /tmp/wvkbd
 
+git clone https://codeberg.org/OpenSD/opensd.git /tmp/opensd
+cd /tmp/opensd
+git checkout "$OPENSD_VERSION"
+cmake -Bbuild -DOPT_POSTINSTALL=FALSE -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+cmake --build build
+cd build
+cmake --build . --taget install
+cd /
+opensdd --version
+rm -rf /tmp/opensd
+
 dnf5 remove -y \
+    gcc-c++ \
+    cmake \
     wayland-devel \
     libxkbcommon-devel \
     pango-devel \
