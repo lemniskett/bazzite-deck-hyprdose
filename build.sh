@@ -16,6 +16,8 @@ enable_copr() {
 dnf5 install -y --setopt=install_weak_deps=False \
     gcc-c++ \
     cmake \
+    meson \
+    ninja-build \
     wayland-devel \
     libxkbcommon-devel \
     pango-devel \
@@ -41,13 +43,14 @@ cd /
 opensdd --version
 rm -rf /tmp/opensd
 
-dnf5 remove -y \
-    gcc-c++ \
-    cmake \
-    wayland-devel \
-    libxkbcommon-devel \
-    pango-devel \
-    scdoc
+# Keep.build deps for now, might be needed for hyprpm
+# dnf5 remove -y \
+#     gcc-c++ \
+#     cmake \
+#     wayland-devel \
+#     libxkbcommon-devel \
+#     pango-devel \
+#     scdoc
 
 enable_copr "solopasha/hyprland"
 enable_copr "atim/starship"
