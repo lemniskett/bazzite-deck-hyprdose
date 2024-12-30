@@ -43,6 +43,9 @@ cd /
 opensdd --version
 rm -rf /tmp/opensd
 
+wget -qO- https://git.io/papirus-folders-install | sh
+papirus-folders -C magenta
+
 # Keep.build deps for now, might be needed for hyprpm
 # dnf5 remove -y \
 #     gcc-c++ \
