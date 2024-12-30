@@ -54,6 +54,7 @@ rm -rf /tmp/opensd
 
 enable_copr "solopasha/hyprland"
 enable_copr "atim/starship"
+enable_copr "errornointernet/walker"
 
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
@@ -66,6 +67,7 @@ dnf5 install -y --setopt=install_weak_deps=False \
     foot \
     waybar \
     nwg-drawer \
+    walker \
     wdisplays \
     pavucontrol \
     mako \
