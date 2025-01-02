@@ -85,8 +85,5 @@ dnf5 install -y --setopt=install_weak_deps=False \
     starship \
     htop
 
-sed -i 's#/usr/bin/gnome-session#/usr/bin/Hyprland#g' /usr/bin/gnome-session-oneshot
-
-wget -O /usr/share/ublue-os/bazzite/bazzite.webm https://cdn.steamdeckrepo.com/videos/KbTEF2C6HSc1KLXqYz7eGM56gpjLpgvo45gL7q6y.webm
-wget -O- https://git.io/papirus-folders-install | sh
+wget -qO- https://git.io/papirus-folders-install | sh
 papirus-folders -C magenta
