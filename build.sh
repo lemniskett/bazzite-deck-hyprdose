@@ -78,6 +78,7 @@ dnf5 install -y --setopt=install_weak_deps=False \
     alacarte \
     seahorse \
     eog \
+    celluloid \
     NetworkManager-tui \
     gnome-extensions-app \
     papirus-icon-theme \
