@@ -88,4 +88,4 @@ dnf5 install -y --setopt=install_weak_deps=False \
 
 wget -qO /usr/share/ublue-os/bazzite/bazzite.webm https://cdn.steamdeckrepo.com/videos/KbTEF2C6HSc1KLXqYz7eGM56gpjLpgvo45gL7q6y.webm
 wget -qO- https://git.io/papirus-folders-install | sh
-papirus-folders -C magenta
+papirus-folders -C violet
