@@ -52,8 +52,9 @@ rm -rf /tmp/opensd
 #     pango-devel \
 #     scdoc
 
-enable_copr "solopasha/hyprland"
-enable_copr "atim/starship"
+enable_copr solopasha/hyprland
+enable_copr atim/starship
+enable_copr erikreider/SwayNotificationCenter
 
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
@@ -69,6 +70,7 @@ dnf5 install -y --setopt=install_weak_deps=False \
     wdisplays \
     pavucontrol \
     mako \
+    SwayNotificationCenter \
     wob \
     grim \
     slurp \
