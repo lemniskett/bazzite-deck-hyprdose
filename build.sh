@@ -54,7 +54,6 @@ rm -rf /tmp/opensd
 
 enable_copr "solopasha/hyprland"
 enable_copr "atim/starship"
-enable_copr "pgdev/ghostty"
 
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
@@ -85,8 +84,7 @@ dnf5 install -y --setopt=install_weak_deps=False \
     papirus-icon-theme \
     adw-gtk3-theme \
     starship \
-    htop \
-    ghostty
+    htop
 
 wget -qO /usr/share/ublue-os/bazzite/bazzite.webm https://cdn.steamdeckrepo.com/videos/KbTEF2C6HSc1KLXqYz7eGM56gpjLpgvo45gL7q6y.webm
 wget -qO- https://git.io/papirus-folders-install | sh
