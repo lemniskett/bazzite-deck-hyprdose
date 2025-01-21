@@ -32,17 +32,6 @@ cd /
 wvkbd-mobintl --version
 rm -rf /tmp/wvkbd
 
-git clone https://codeberg.org/OpenSD/opensd.git /tmp/opensd
-cd /tmp/opensd
-git checkout "$OPENSD_VERSION"
-cmake -Bbuild -DOPT_POSTINSTALL=FALSE -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
-cmake --build build
-cd build
-cmake --build . --target install
-cd /
-opensdd --version
-rm -rf /tmp/opensd
-
 # Keep.build deps for now, might be needed for hyprpm
 # dnf5 remove -y \
 #     gcc-c++ \
@@ -55,6 +44,9 @@ rm -rf /tmp/opensd
 enable_copr solopasha/hyprland
 enable_copr atim/starship
 enable_copr erikreider/SwayNotificationCenter
+
+# Add cloudflare-warp.repo to /etc/yum.repos.d/
+wget https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo -O /etc/yum.repos.d/cloudflare-warp.repo
 
 dnf5 install -y --setopt=install_weak_deps=False \
     xdg-desktop-portal-hyprland \
@@ -86,7 +78,8 @@ dnf5 install -y --setopt=install_weak_deps=False \
     papirus-icon-theme \
     adw-gtk3-theme \
     starship \
-    htop
+    htop \
+    cloudflare-warp
 
 wget -qO /usr/share/ublue-os/bazzite/bazzite.webm https://cdn.steamdeckrepo.com/videos/KbTEF2C6HSc1KLXqYz7eGM56gpjLpgvo45gL7q6y.webm
 wget -qO- https://git.io/papirus-folders-install | sh
